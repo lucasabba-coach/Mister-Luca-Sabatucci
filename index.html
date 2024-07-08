@@ -26,15 +26,15 @@
             transform: translateY(-50%);
             height: 60px;
         }
-</header>
-<!-- Inizio sezione immagine di copertina -->
-<div class="cover-image">
-    <img src="IMG_4595.JPG" alt="Immagine di copertina">
-</div>
-<!-- Fine sezione immagine di copertina -->
-<div class="container">
-
-        
+        .cover-image {
+            width: 100%;
+            height: 300px; /* Altezza della copertina */
+            overflow: hidden;
+        }
+        .cover-image img {
+            width: 100%;
+            height: auto;
+        }
         nav {
             text-align: right;
         }
@@ -98,43 +98,6 @@
             max-width: 100%;
             height: auto;
         }
-        #feedback {
-            background: #f9f9f9;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-        }
-        #feedback h2 {
-            margin-bottom: 15px;
-        }
-        #feedback form {
-            display: flex;
-            flex-direction: column;
-        }
-        #feedback form label {
-            margin-top: 10px;
-        }
-        #feedback form input,
-        #feedback form textarea {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            max-width: 500px;
-        }
-        #feedback form button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #0066cc;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #feedback form button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
@@ -147,22 +110,16 @@
                 <li><a href="#attivita">Attività</a></li>
                 <li><a href="#contatti">Contatti</a></li>
                 <li><a href="#galleria">Galleria</a></li> <!-- Link per la galleria -->
-                <li>
-                    <a href="#">Articoli</a>
-                    <ul>
-                        <li><a href="#articolo1">Articolo 1</a></li>
-                        <li><a href="#articolo2">Articolo 2</a></li>
-                        <li><a href="#articolo3">Articolo 3</a></li>
-                        <!-- Aggiungi altri articoli qui -->
-                    </ul>
-                </li>
-                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#articoli">Articoli</a></li> <!-- Link per gli articoli -->
             </ul>
         </nav>
         <div class="container">
             <h1>Benvenuti nel mio sito</h1>
         </div>
     </header>
+    <div class="cover-image">
+        <img src="IMG_4595.JPG" alt="Immagine di copertina">
+    </div>
     <div class="container">
         <div class="section" id="chi-sono">
             <h2>Chi sono</h2>
@@ -194,34 +151,21 @@
                 <img src="ARE YOU READY FOR THE NEXT WEEK.png.PNG" alt="Descrizione immagine 1">
                 <img src="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" alt="Descrizione immagine 2">
                 <img src="Untitled design.PNG" alt="Descrizione immagine 3">
+                <!-- Aggiungi più immagini secondo necessità -->
             </div>
         </div>
-        <div class="section contact-info" id="contatti">
+        <div class="section" id="contatti">
             <h3>Contatti</h3>
             <p><strong>Nome:</strong> Luca Sabatucci</p>
             <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
             <p><strong>Numero di Telefono:</strong> <a href="tel:+393347012691">3347012691</a></p>
         </div>
-        <div class="section" id="feedback">
-            <h2>Lascia un feedback</h2>
-            <form id="feedback-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Messaggio:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Invia</button>
-            </form>
+        <div class="section" id="articoli">
+            <h2>Articoli</h2>
+            <p>In questa sezione potrai trovare articoli e approfondimenti sul mondo del calcio giovanile. Prossimamente disponibili.</p>
         </div>
-        <div class="section" id="articolo1">
-            <h2>Articolo 1</h2>
-            <p>Contenuto dell'articolo 1.</p>
-        </div>
-        <div class="section" id="articolo2">
-            <h2>Articolo 2</h2>
-            <p>Contenuto dell'art
+    </div>
+</body>
+</html>
+
 
