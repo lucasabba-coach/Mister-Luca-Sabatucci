@@ -12,21 +12,28 @@
             background-color: #f4f4f4;
             color: #333;
         }
-        header { 
+       header {
             background-color: #0066cc;
             color: #fff;
             padding: 20px 0;
             text-align: center;
             position: relative;
         }
-        header img { 
+        header img {
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
             height: 60px;
         }
-        <img src="IMG_4595.JPG" alt="Immagine di copertina">
+        .cover-image {
+            width: 100%;
+            height: 300px; /* Altezza della copertina */
+            overflow: hidden;
+        }
+        .cover-image img {
+            width: 100%;
+            height: auto;
         nav {
             text-align: center;
             margin-top: 20px;
