@@ -26,6 +26,40 @@
             transform: translateY(-50%);
             height: 60px;
         }
+        nav {
+            text-align: right;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li:hover {
+            background-color: #0056b3;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background-color: #0066cc;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
         .container {
             width: 80%;
             margin: auto;
@@ -46,22 +80,40 @@
         .contact-info h3, .section h3 {
             margin-bottom: 10px;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="Background Eraser.PNG" alt="Logo">
+        <img src="logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#chi-sono">Chi sono</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#attivita">Attività</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#galleria">Galleria</a></li> <!-- Link per la galleria -->
+            </ul>
+        </nav>
         <div class="container">
             <h1>Benvenuti nel mio sito</h1>
         </div>
     </header>
     <div class="container">
-        <div class="section">
+        <div class="section" id="chi-sono">
             <h2>Chi sono</h2>
             <p>Mi chiamo Luca Sabatucci e sono un allenatore di calcio giovanile con anni di esperienza nel campo dell'insegnamento e dello sviluppo delle capacità dei giovani talenti. La mia passione per il calcio non conosce confini e si riflette ogni giorno nel mio lavoro. Credo fermamente che l'educazione sportiva non sia solo un modo per migliorare le abilità atletiche, ma anche un potente strumento per la crescita personale.</p>
-            <img src="Foto" alt="Foto di Luca Sabatucci">
+            <img src="Foto.jpg" alt="Foto di Luca Sabatucci">
         </div>
-        <div class="section">
+        <div class="section" id="curriculum">
             <h2>Curriculum</h2>
             <p>Alleno dal 2009 e ho accumulato una vasta esperienza lavorando con diverse squadre e club prestigiosi:</p>
             <ul>
@@ -76,11 +128,19 @@
             </ul>
             <p>Dal 2022, organizzo un centro estivo di perfezionamento calcistico che ha raggiunto oltre 100 iscritti nel 2024.</p>
         </div>
-        <div class="section">
+        <div class="section" id="attivita">
             <h2>Attività</h2>
             <p>Offro allenamenti individuali o a piccoli gruppi, mirati a migliorare le abilità tecniche e tattiche dei giovani calciatori. Le mie sessioni di allenamento sono progettate per essere coinvolgenti e formative, adattandosi alle esigenze specifiche di ogni atleta.</p>
         </div>
-        <div class="section contact-info">
+        <div class="section" id="galleria">
+            <h2>Galleria</h2>
+            <div class="gallery">
+                <img src="immagine1.jpg" alt="Descrizione immagine 1">
+                <img src="immagine2.jpg" alt="Descrizione immagine 2">
+                <!-- Aggiungi più immagini secondo necessità -->
+            </div>
+        </div>
+        <div class="section contact-info" id="contatti">
             <h3>Contatti</h3>
             <p><strong>Nome:</strong> Luca Sabatucci</p>
             <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
@@ -89,4 +149,4 @@
     </div>
 </body>
 </html>
-       
+   
