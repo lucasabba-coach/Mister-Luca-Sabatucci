@@ -258,14 +258,28 @@
 </div>
         </div>
         <div class="section contact-info" id="contatti">
-            <h3>Contatti</h3>
-            <p><strong>Nome:</strong> Luca Sabatucci</p>
-            <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
-            <p><strong>Numero di Telefono:</strong> <a href="tel:+393347012691">3347012691</a></p>
-        </div>
+    <h3>Contatti</h3>
+    <p><strong>Nome:</strong> Luca Sabatucci</p>
+    <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
+    <p><strong>Numero di Telefono:</strong> <a href="tel:+393347012691">3347012691</a></p>
+</div>
+
+<div class="section" id="recensioni">
+    <h2>Recensioni</h2>
+    <div id="reviews-list">
+        <!-- Qui verranno visualizzate le recensioni inserite dinamicamente -->
     </div>
-</body>
-</html>
+    <div class="section contact-info">
+        <h3>Lascia una recensione</h3>
+        <form id="review-form" onsubmit="submitReview(event)">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="review">Recensione:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+            <button type="submit">Invia recensione</button>
+        </form>
+    </div>
+</div>
            
 
 
