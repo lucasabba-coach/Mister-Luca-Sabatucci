@@ -111,6 +111,33 @@
         .video-gallery video {
             max-width: 100%;
             height: auto;
+            #reviews-list .review-item {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        #review-form {
+            margin-bottom: 20px;
+        }
+        #review-form label {
+            display: block;
+            margin: 5px 0;
+        }
+        #review-form input, #review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        #review-form button {
+            padding: 10px 15px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #review-form button:hover {
+            background-color: #0056b3;
         }
     </style>
     <script>
@@ -123,6 +150,20 @@
 
             const mailtoLink = `mailto:lssocceraccademy@libero.it?subject=Messaggio%20da%20${name}&body=${message}%0A%0AContatto: ${email}`;
             window.location.href = mailtoLink;
+        }
+        function submitReview(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+
+            const reviewItem = document.createElement('div');
+            reviewItem.classList.add('review-item');
+            reviewItem.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+
+            document.getElementById('reviews-list').appendChild(reviewItem);
+
+            // Reset the form
+            document.getElementById('review-form').reset();
         }
     </script>
 </head>
