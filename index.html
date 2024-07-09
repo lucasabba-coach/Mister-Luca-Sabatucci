@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Sabatucci - Allenatore di Calcio Giovanile</title>
-    <meta name="description" content="Sito ufficiale di Luca Sabatucci, allenatore di calcio giovanile. Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile.">
-    <meta name="keywords" content="Luca Sabatucci, allenatore di calcio, calcio giovanile, Ascoli Piceno, attività sportive, allenamenti di calcio">
+    <meta name="description" content="Sito ufficiale di Luca Sabatucci, allenatore di calcio giovanile. Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile ad Ascoli Piceno.">
+    <meta name="keywords" content="Luca Sabatucci, allenatore di calcio, calcio giovanile, Ascoli Piceno, attività sportive, allenamenti di calcio, LS Soccer Academy, centro estivo di calcio, formazione calcistica">
     <meta name="author" content="Luca Sabatucci">
+    <meta property="og:title" content="Luca Sabatucci - Allenatore di Calcio Giovanile">
+    <meta property="og:description" content="Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile.">
+    <meta property="og:image" content="https://www.tuosito.com/immagine-di-copertina.jpg">
+    <meta property="og:url" content="https://www.tuosito.com/">
+    <meta name="twitter:title" content="Luca Sabatucci - Allenatore di Calcio Giovanile">
+    <meta name="twitter:description" content="Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile.">
+    <meta name="twitter:image" content="https://www.tuosito.com/immagine-di-copertina.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://www.tuosito.com/">
     <style>
         body {
@@ -48,6 +56,7 @@
         }
         nav ul li {
             margin: 0 10px;
+            position: relative;
         }
         nav ul li a {
             display: block;
@@ -57,6 +66,21 @@
         }
         nav ul li:hover {
             background-color: #0056b3;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0066cc;
+            padding: 0;
+        }
+        nav ul ul li {
+            width: 200px;
+            margin: 0;
         }
         .section {
             margin: 20px 0;
@@ -80,6 +104,18 @@
             height: auto;
         }
     </style>
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            const mailtoLink = `mailto:lssocceraccademy@libero.it?subject=Messaggio%20da%20${name}&body=${message}%0A%0AContatto: ${email}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -90,9 +126,15 @@
                 <ul>
                     <li><a href="#chi-sono">Chi sono</a></li>
                     <li><a href="#curriculum">Curriculum</a></li>
-                    <li><a href="#articoli">Articoli</a></li>
-                    <li><a href="#Ls Soccer Academy">Ls Soccer Academy</a></li>
-                    <li><a href="#galleria">Galleria</a></li>
+                    <li><a href="#ls-soccer-academy">LS Soccer Academy</a></li>
+                    <li>
+                        <a href="#articoli">Articoli</a>
+                        <ul>
+                            <li><a href="#articolo1">Articolo 1</a></li>
+                            <li><a href="#articolo2">Articolo 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="galleria.html">Galleria</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
@@ -120,40 +162,16 @@
             </ul>
             <p>Dal 2022, organizzo un centro estivo di perfezionamento calcistico che ha raggiunto oltre 100 iscritti nel 2024.</p>
         </div>
-        <div class="section" id="Ls Soccer Academy">
-            <h2>Ls Soccer Academy</h2>
+        <div class="section" id="ls-soccer-academy">
+            <h2>LS Soccer Academy</h2>
             <p>Benvenuti alla LS Soccer Academy, fondata da Luca Sabatucci con l'obiettivo di aiutare giovani appassionati di calcio a raggiungere il loro massimo potenziale. La nostra accademia si distingue per offrire allenamenti ad alta intensità e stimolanti, progettati per favorire la crescita personale e sportiva di ogni ragazzo.</p>
             <p>Con una profonda passione per l'insegnamento e il gioco del calcio, ho intrapreso questa missione nel 2024 con grande entusiasmo. Il nostro recente centro estivo ha accolto oltre 100 partecipanti, ottenendo risultati eccellenti grazie al metodo unico della LS Soccer Academy e al contributo fondamentale del nostro qualificato staff di allenatori.</p>
-            <p>Il nostro team ha incluso quattro laureati in scienze motorie con vasta esperienza nel calcio, oltre ad altri istruttori altamente qualificati con competenze e esperienze significative. Guardando al futuro, mi impegno ad Offrire allenamenti individuali o a piccoli gruppi, mirati a migliorare le abilità tecniche e tattiche dei giovani calciatori. Le mie sessioni di allenamento sono progettate per essere coinvolgenti e formative, adattandosi alle esigenze specifiche di ogni atleta seguire personalmente atleti desiderosi di migliorare attraverso sessioni private o in mini gruppi, utilizzando sempre metodologie d'allenamento innovative e coinvolgenti.</p>
+            <p>Il nostro team include quattro laureati in scienze motorie con vasta esperienza nel calcio, oltre ad altri istruttori altamente qualificati con competenze e esperienze significative. Guardando al futuro, mi impegno a seguire personalmente atleti desiderosi di migliorare attraverso sessioni private o in mini gruppi, utilizzando sempre metodologie d'allenamento innovative e coinvolgenti.</p>
             <p>Unisciti a noi nella tua ricerca di eccellenza nel calcio. Siamo qui per aiutarti a raggiungere i tuoi obiettivi sportivi con passione e dedizione.</p>
         </div>
         <div class="section" id="articoli">
             <h2>Articoli</h2>
-            <p>Qui puoi trovare gli articoli recenti su di me:</p>
-            <ul>
-                <li><a href="https://www.picenonews24.it/lallenatore-luca-sabatucci-aiuto-i-giovani-giocatori-a-crescere-non-solo-come-atleti-ma-anche-come-persone" target="_blank">L'allenatore Luca Sabatucci: aiuto ai giovani giocatori a crescere non solo come atleti, ma anche come persone</a></li>
-                <li><a href="https://www.picenonews24.it/e-partito-il-football-summer-camp-tanto-calcio-e-divertimento-per-i-piu-piccoli" target="_blank">È partito il Football Summer Camp: tanto calcio e divertimento per i più piccoli</a></li>
-            </ul>
-        </div>
-        <div class="section" id="galleria">
-            <h2>Galleria</h2>
-            <div class="gallery">
-                <img src="ARE YOU READY FOR THE NEXT WEEK.png.PNG" alt="Descrizione immagine 1">
-                <img src="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" alt="Descrizione immagine 2">
-                <img src="Untitled design.PNG" alt="Descrizione immagine 3">
-                <img src="123.png.PNG" alt="Descrizione immagine 4">
-                <!-- Aggiungi più immagini secondo necessità -->
-            </div>
-        </div>
-        <div class="section contact-info" id="contatti">
-            <h3>Contatti</h3>
-            <p><strong>Nome:</strong> Luca Sabatucci</p>
-            <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
-            <p><strong>Numero di Telefono:</strong> <a href="tel:+393347012691">3347012691</a></p>
-        </div>
-    </div>
-</body>
-</html>
+
 
 
            
