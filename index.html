@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="google-site-verification" content="ZFI7CugwbPp0EVhCMg-9W7Qkifm0oLdaY5vzLDGl7gk" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Altri tag -->
-    <title>Luca Sabatucci - Allenatore di Calcio </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Sabatucci - Allenatore di Calcio</title>
     <meta name="description" content="Sito ufficiale di Luca Sabatucci, allenatore di calcio giovanile. Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile ad Ascoli Piceno.">
     <meta name="keywords" content="Luca Sabatucci, allenatore di calcio, calcio giovanile, Ascoli Piceno, attività sportive, allenamenti di calcio, LS Soccer Academy">
     <meta name="author" content="Luca Sabatucci">
@@ -113,7 +112,8 @@
         .video-gallery video {
             max-width: 100%;
             height: auto;
-            #reviews-list .review-item {
+        }
+        #reviews-list .review-item {
             background: #f9f9f9;
             padding: 10px;
             margin: 10px 0;
@@ -143,50 +143,47 @@
         }
     </style>
     <script>
-        function sendEmail(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadReviews();
+        });
 
-            const mailtoLink = `mailto:lssocceraccademy@libero.it?subject=Messaggio%20da%20${name}&body=${message}%0A%0AContatto: ${email}`;
-            window.location.href = mailtoLink;
+        function saveReviews(reviews) {
+            localStorage.setItem('reviews', JSON.stringify(reviews));
         }
+
+        function loadReviews() {
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            reviews.forEach(review => {
+                addReviewToDOM(review.name, review.review, review.rating);
+            });
+        }
+
         function submitReview(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const review = document.getElementById('review').value;
+            const rating = document.getElementById('rating').value;
 
+            const newReview = { name, review, rating };
+
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            reviews.push(newReview);
+            saveReviews(reviews);
+
+            addReviewToDOM(name, review, rating);
+
+            document.getElementById('review-form').reset();
+        }
+
+        function addReviewToDOM(name, review, rating) {
             const reviewItem = document.createElement('div');
             reviewItem.classList.add('review-item');
-            reviewItem.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+            reviewItem.innerHTML = `<strong>${name}</strong> - Rating: ${rating}/5 <p>${review}</p>`;
 
             document.getElementById('reviews-list').appendChild(reviewItem);
-
-            // Reset the form
-            document.getElementById('review-form').reset();
         }
     </script>
 </head>
-    <script>
-    function submitReview(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const review = document.getElementById('review').value;
-        const rating = document.getElementById('rating').value;
-
-        const reviewItem = document.createElement('div');
-        reviewItem.classList.add('review-item');
-        reviewItem.innerHTML = `<strong>${name}</strong> - Rating: ${rating}/5 <p>${review}</p>`;
-
-        document.getElementById('reviews-list').appendChild(reviewItem);
-
-        // Reset the form
-        document.getElementById('review-form').reset();
-    }
-</script>
-
 <body>
     <header>
         <img src="Background Eraser.PNG" alt="Logo">
@@ -214,99 +211,69 @@
     </header>
     <img src="IMG_4595.JPG" alt="Immagine di copertina" style="width: 100%; height: auto;">
     <div class="container">
-        <div class="section" id="chi-sono">
-            <h2>Chi sono</h2>
-            <p>Mi chiamo Luca Sabatucci, nato ad Ascoli Piceno il 18/04/1992. Sono un allenatore di calcio giovanile con anni di esperienza nel campo dell'insegnamento e dello sviluppo delle capacità dei giovani talenti. La mia passione per il calcio non conosce confini e si riflette ogni giorno nel mio lavoro. Credo fermamente che l'educazione sportiva non sia solo un modo per migliorare le abilità atletiche, ma anche un potente strumento per la crescita personale.</p>
-            <img src="Foto" alt="Foto di Luca Sabatucci">
-        </div>
-        <div class="section" id="curriculum">
-            <h2>Curriculum</h2>
-            <p>Alleno dal 2009 e ho accumulato una vasta esperienza lavorando con diverse squadre e club prestigiosi che mi hanno permesso di avere una formazione completa:</p>
-            <ul>
-                <li>4 Procalcio Ascoli</li>
-                <li>5 Piazza Immacolata</li>
-                <li>1 Sambenedettese</li>
-                <li>1 Castel di Lama</li>
-                <li>1 Porta Romana</li>
-                <li>1 Sudtirol</li>
-                <li>1 Ascoli Calcio</li>
-                <li>2 Monticelli</li>
-            </ul>
-            <p>Dal 2022, organizzo un centro estivo di perfezionamento calcistico che ha raggiunto oltre 100 iscritti nel 2024.</p>
-        </div>
-        <div class="section" id="ls-soccer-academy">
-            <h2>LS Soccer Academy</h2>
-            <p>Benvenuti alla LS Soccer Academy, fondata da Luca Sabatucci con l'obiettivo di aiutare giovani appassionati di calcio a raggiungere il loro massimo potenziale. La nostra accademia si distingue per offrire allenamenti ad alta intensità e stimolanti, progettati per favorire la crescita personale e sportiva di ogni ragazzo.</p>
-            <p>Con una profonda passione per l'insegnamento e il gioco del calcio, ho intrapreso questa missione nel 2024 con grande entusiasmo. Il nostro recente centro estivo ha accolto oltre 100 partecipanti, ottenendo risultati eccellenti grazie al metodo unico della LS Soccer Academy e al contributo fondamentale del nostro qualificato staff di allenatori.</p>
-            <p>Il nostro team include quattro laureati in scienze motorie con vasta esperienza nel calcio, oltre ad altri istruttori altamente qualificati con competenze e esperienze significative. Guardando al futuro, mi impegno a seguire personalmente atleti desiderosi di migliorare attraverso sessioni private o in mini gruppi, utilizzando sempre metodologie d'allenamento innovative e coinvolgenti.</p>
-                        <p>Unisciti a noi nella tua ricerca di eccellenza nel calcio. Siamo qui per aiutarti a raggiungere i tuoi obiettivi sportivi con passione e dedizione.</p>
-        </div>
-        <div class="section" id="articoli">
-            <h2>Articoli</h2>
-            <p>Qui puoi trovare gli articoli recenti su di me:</p>
-            <ul>
-                <li><a href="https://www.picenonews24.it/lallenatore-luca-sabatucci-aiuto-i-giovani-giocatori-a-crescere-non-solo-come-atleti-ma-anche-come-persone" target="_blank">L'allenatore Luca Sabatucci: aiuto ai giovani giocatori a crescere non solo come atleti, ma anche come persone</a></li>
-                <li><a href="https://www.picenonews24.it/e-partito-il-football-summer-camp-tanto-calcio-e-divertimento-per-i-piu-piccoli" target="_blank">È partito il Football Summer Camp: tanto calcio e divertimento per i più piccoli</a></li>
-            </ul>
-        </div>
-        <div class="section" id="galleria">
-            <h2>Galleria</h2>
-            <div class="gallery">
-                <img src="ARE YOU READY FOR THE NEXT WEEK.png.PNG" alt="Descrizione immagine 1">
-                <img src="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" alt="Descrizione immagine 2">
-                <img src="Untitled design.PNG" alt="Descrizione immagine 3">
-                <img src="123.png.PNG" alt="Descrizione immagine 4">
-                <img src="3a582546-8667-4a7b-b676-3e8c375a4e84.JPG" alt="Descrizione immagine 5">
-                <img src="7a15b936-e6b7-4767-be29-d47aeeb239a8.JPG" alt="Descrizione immagine 7">
-                <img src="8d3c0404-7c78-450e-90cb-dc7dd3167a31.JPG" alt="Descrizione immagine 8">
-                <img src="8f3d0112-3fbd-4927-b333-9fac160c95c1.JPG" alt="Descrizione immagine 9">
-                <img src="40cc3f07-eb3a-4bf1-8788-913354074bc3.JPG" alt="Descrizione immagine 10">
-                <img src="7865e9d1-8121-4691-a9de-a5339bc8ff0f.JPG" alt="Descrizione immagine 11">
-                <img src="6419258e-5dc0-4ddb-8928-3e90c19bb1a5.JPG" alt="Descrizione immagine 12">
-                <img src="b395fd3a-d80e-41c2-ad60-f93a48c31c7b.JPG" alt="Descrizione immagine 13">
-                <img src="c34f3e52-7189-44b0-82d2-5ca33ed9ad17.JPG" alt="Descrizione immagine 14">
-                <img src="de564158-1d54-4f9b-a2c0-47832d8abee5.JPG" alt="Descrizione immagine 15">
-                <!-- Aggiungi più immagini secondo necessità -->
-            </div>
-            <div class="section" id="video-gallery">
-    <h2>Video Gallery</h2>
-    <div class="video-gallery">
-        <video controls>
-            <source src="copy_E4FD32B6-BC45-4BCF-9C75-0DFB17E59C3F.MOV" type="video/mp4">
-            Il tuo browser non supporta il tag video.
-        </video>
+        <main>
+            <section id="chi-sono">
+                <h2>Chi sono</h2>
+                <p>Mi chiamo Luca Sabatucci e sono un allenatore di calcio giovanile con anni di esperienza...</p>
+            </section>
+            <section id="curriculum">
+                <h2>Curriculum</h2>
+                <p>Qui troverai il mio percorso professionale...</p>
+            </section>
+            <section id="ls-soccer-academy">
+                <h2>LS Soccer Academy</h2>
+                <p>Scopri di più sulla mia scuola calcio...</p>
+            </section>
+            <section id="galleria">
+                <h2>Galleria</h2>
+                <div class="gallery">
+                    <img src="IMG_4595.JPG" alt="Immagine 1">
+                    <img src="IMG_4595.JPG" alt="Immagine 2">
+                    <img src="IMG_4595.JPG" alt="Immagine 3">
+                    <img src="IMG_4595.JPG" alt="Immagine 4">
+                </div>
+            </section>
+            <section id="video-galleria">
+                <h2>Video Galleria</h2>
+                <div class="video-gallery">
+                    <video controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                </div>
+            </section>
+            <section id="recensioni">
+                <h2>Recensioni</h2>
+                <div id="reviews-list"></div>
+                <form id="review-form" onsubmit="submitReview(event)">
+                    <h3>Lascia una recensione</h3>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" required>
+                    <label for="review">Recensione:</label>
+                    <textarea id="review" required></textarea>
+                    <label for="rating">Valutazione (1-5):</label>
+                    <input type="number" id="rating" min="1" max="5" required>
+                    <button type="submit">Invia</button>
+                </form>
+            </section>
+            <section id="contatti">
+                <h2>Contatti</h2>
+                <p>Puoi contattarmi via email a: <a href="mailto:lucasabatucci@example.com">lucasabatucci@example.com</a></p>
+            </section>
+        </main>
     </div>
-</div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luca Sabatucci. Tutti i diritti riservati.</p>
         </div>
-        <div class="section" id="Recensioni">
-         <h2>Recensioni</h2>
-    <!-- MOLTO PREPARATO E PROFESSIONALE MIO FIGLIO SI TROVA MOLTO BENE CON LUI E VEDO CHE STA APPRENDENDO MOLTO -->
-    <h3>Contatti</h3>
-    <p><strong>Nome:</strong> Luca Sabatucci</p>
-    <p><strong>Email:</strong> <a href="mailto:lssocceraccademy@libero.it">lssocceraccademy@libero.it</a></p>
-    <p><strong>Numero di Telefono:</strong> <a href="tel:+393347012691">3347012691</a></p>
-</div>
+    </footer>
+</body>
+</html>
 
-<div class="section" id="reviews">
-    <h2>Recensioni</h2>
-    <div id="reviews-list">
-        <!-- MOLTO PREPARATO E PROFESSIONALE MIO FIGLIO SI TROVA MOLTO BENE CON LUI E VEDO CHE STA APPRENDENDO MOLTO -->
-    </div>
-    <div class="section contact-info">
-        <h3>Lascia una recensione</h3>
-       <form id="review-form" onsubmit="submitReview(event)">
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="review">Recensione:</label>
-    <textarea id="review" name="review" rows="4" required></textarea>
-    <label for="rating">Voto (da 1 a 5):</label>
-    <input type="number" id="rating" name="rating" min="1" max="5" required>
-    <button type="submit">Invia recensione</button>
-</form>
-     
-
-    </div>
-</div>
 
 
 
