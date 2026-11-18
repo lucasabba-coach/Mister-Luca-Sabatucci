@@ -1,346 +1,1208 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luca Sabatucci - Allenatore di Calcio</title>
-    <meta name="description" content="Sito ufficiale di Luca Sabatucci, allenatore di calcio giovanile. Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile ad Ascoli Piceno.">
-    <meta name="keywords" content="Luca Sabatucci, allenatore di calcio, calcio giovanile, Ascoli Piceno, attività sportive, allenamenti di calcio, LS Soccer Academy">
+
+    <title>Luca Sabatucci | Allenatore di Calcio e LS Soccer Academy</title>
+
+    <meta name="description" content="Sito ufficiale di Luca Sabatucci, allenatore di calcio giovanile e fondatore di LS Soccer Academy. Scopri il mio percorso, la mia metodologia e le attività.">
     <meta name="author" content="Luca Sabatucci">
-    <meta property="og:title" content="Luca Sabatucci - Allenatore di Calcio Giovanile">
-    <meta property="og:description" content="Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile.">
-    <meta property="og:image" content="https://www.tuosito.com/immagine-di-copertina.jpg">
-    <meta property="og:url" content="https://www.tuosito.com/">
-    <meta name="twitter:title" content="Luca Sabatucci - Allenatore di Calcio Giovanile">
-    <meta name="twitter:title" content="Luca Sabatucci - Luca Sabatucci">
-    <meta name="twitter:title" content="Sabatucci">
-    <meta name="twitter:description" content="Scopri di più sulla mia esperienza e le mie attività nel calcio giovanile.">
-    <meta name="twitter:image" content="https://www.tuosito.com/immagine-di-copertina.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://www.tuosito.com/">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#07172f">
+
+    <meta property="og:title" content="Luca Sabatucci | Football Coach">
+    <meta property="og:description" content="Passione, formazione e crescita attraverso il calcio.">
+    <meta property="og:image" content="https://lucasabba-coach.github.io/Mister-Luca-Sabatucci/IMG_4595.JPG">
+    <meta property="og:url" content="https://lucasabba-coach.github.io/Mister-Luca-Sabatucci/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --navy: #07172f;
+            --navy-light: #102b50;
+            --blue: #0878e8;
+            --cyan: #32b8ed;
+            --white: #ffffff;
+            --background: #f3f6fb;
+            --text: #25344a;
+            --muted: #718096;
+            --border: #e2e9f2;
+            --radius: 18px;
+            --shadow: 0 10px 35px rgba(7, 23, 47, .08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
         body {
-           font-family: Arial, sans-serif;
-            font-size: 18px; 
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        header {
-            background-color: #0066cc;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            position: relative;
-            margin-bottom: 20px
-        }
-        header img {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 60px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            padding: 20px;
-        }
-        nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 0 10px;
-            position: relative;
-        }
-        nav ul li a {
+
+        img, video {
+            max-width: 100%;
             display: block;
-            padding: 10px 15px;
-            color: #fff;
+        }
+
+        a {
+            color: var(--blue);
             text-decoration: none;
         }
-        nav ul li:hover {
-            background-color: #0056b3;
+
+        a:hover {
+            color: var(--cyan);
         }
-        nav ul li:hover ul {
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--navy);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,.15);
+        }
+
+        .header-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: white;
+            min-width: 0;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .brand-text strong {
             display: block;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .5px;
         }
-        nav ul ul {
+
+        .brand-text span {
+            display: block;
+            font-size: 11px;
+            color: var(--cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            padding: 11px 12px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        nav a:hover {
+            background: var(--navy-light);
+            color: var(--cyan);
+        }
+
+        .menu-toggle {
             display: none;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,.3);
+            color: white;
+            border-radius: 9px;
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            background: var(--navy);
+            overflow: hidden;
+        }
+
+        .hero-image {
             position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0066cc;
-            padding: 0;
-        }
-        nav ul ul li {
-            width: 200px;
-            margin: 0;
-        }
-        .section {
-            margin: 20px 0;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .section img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border: 1px solid #ccc;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-gap: 10px;
-        }
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-        }
-        .video-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-gap: 10px;
-        }
-        .video-gallery video {
-            max-width: 100%;
-            height: auto;
-        }
-        #reviews-list .review-item {
-            background: #f9f9f9;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-        }
-        #review-form {
-            margin-bottom: 20px;
-        }
-        #review-form label {
-            display: block;
-            margin: 5px 0;
-        }
-        #review-form input, #review-form textarea {
+            inset: 0;
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: .42;
         }
-        #review-form button {
-            padding: 10px 15px;
-            background-color: #0066cc;
-            color: #fff;
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(7,23,47,.96), rgba(7,23,47,.48));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 80px 0;
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 5vw, 62px);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            color: #dce8f7;
+            font-size: clamp(15px, 2vw, 18px);
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 23px;
+            border-radius: 10px;
+            background: var(--blue);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .2s;
             border: none;
             cursor: pointer;
         }
-        #review-form button:hover {
-            background-color: #0056b3;
+
+        .button:hover {
+            background: var(--cyan);
+            color: var(--navy);
+            transform: translateY(-2px);
         }
-        @media (max-width: 768px) {
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,.6);
+            margin-left: 10px;
+        }
+
+        /* SECTIONS */
+
+        main {
+            padding: 35px 0 60px;
+        }
+
+        .section {
+            background: white;
+            border-radius: var(--radius);
+            padding: clamp(22px, 4vw, 42px);
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading span {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--navy);
+            line-height: 1.3;
+            margin-top: 5px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        /* PROFILO */
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        /* CURRICULUM */
+
+        .timeline {
+            border-left: 3px solid var(--blue);
+            margin: 20px 0 20px 8px;
+            padding-left: 25px;
+        }
+
+        .timeline li {
+            list-style: none;
+            position: relative;
+            padding: 5px 0 14px;
+        }
+
+        .timeline li::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 13px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--blue);
+        }
+
+        .timeline strong {
+            color: var(--navy);
+        }
+
+        /* ACADEMY */
+
+        .academy-banner {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .academy-banner h3 {
+            color: var(--cyan);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .academy-banner p {
+            color: #e0eaf5;
+        }
+
+        /* ARTICOLI */
+
+        .article-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .article-list a {
+            display: block;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            color: var(--navy);
+            font-weight: 600;
+            background: #fafcff;
+            transition: .2s;
+        }
+
+        .article-list a:hover {
+            border-color: var(--blue);
+            background: #f0f7ff;
+            transform: translateX(4px);
+        }
+
+        /* GALLERIA */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .gallery a {
+            overflow: hidden;
+            border-radius: 12px;
+            background: #e8eef5;
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform .35s;
+        }
+
+        .gallery a:hover img {
+            transform: scale(1.06);
+        }
+
+        /* VIDEO */
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .video-gallery video {
+            width: 100%;
+            border-radius: 12px;
+            background: black;
+        }
+
+        /* RECENSIONI */
+
+        .review-note {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .review-item {
+            padding: 16px;
+            background: #f5f8fc;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 12px;
+        }
+
+        .review-item strong {
+            color: var(--navy);
+        }
+
+        #review-form {
+            display: grid;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        #review-form label {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        #review-form input,
+        #review-form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            font: inherit;
+            font-size: 14px;
+        }
+
+        #review-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        #review-form button {
+            justify-self: start;
+        }
+
+        /* CONTATTI */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .contact-card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #f4f8fd;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .contact-card a {
+            overflow-wrap: anywhere;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--navy);
+            color: #c7d5e7;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        footer p {
+            font-size: 12px;
+            margin: 5px;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .header-inner {
+                flex-wrap: wrap;
+                padding: 12px 0;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                padding: 9px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr 240px;
+                gap: 25px;
+            }
+        }
+
+        /* SMARTPHONE */
+
+        @media (max-width: 650px) {
             .container {
-                width: 90%;
+                width: calc(100% - 28px);
             }
-            header img {
-                height: 40px;
-                left: 10px;
+
+            .header-inner {
+                min-height: 72px;
+                justify-content: space-between;
+                flex-wrap: nowrap;
             }
+
+            .brand img {
+                width: 46px;
+                height: 46px;
+            }
+
+            .brand-text strong {
+                font-size: 15px;
+            }
+
+            .brand-text span {
+                font-size: 9px;
+            }
+
+            .menu-toggle {
+                display: block;
+                flex-shrink: 0;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--navy);
+                padding: 10px 15px 20px;
+                border-top: 1px solid rgba(255,255,255,.1);
+            }
+
+            nav.open {
+                display: block;
+            }
+
             nav ul {
                 flex-direction: column;
+                align-items: stretch;
+                gap: 3px;
             }
-            nav ul li {
+
+            nav a {
+                padding: 12px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 390px;
+            }
+
+            .hero-content {
+                padding: 55px 0;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .button {
+                width: 100%;
                 margin: 5px 0;
+            }
+
+            .button-outline {
+                margin-left: 0;
+            }
+
+            main {
+                padding-top: 20px;
+            }
+
+            .section {
+                padding: 22px 17px;
+                margin-bottom: 18px;
+                border-radius: 14px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .profile-photo {
+                width: min(100%, 300px);
+                margin: 0 auto;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 9px;
+            }
+
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 21px;
+            }
+
+            .timeline li::before {
+                left: -30px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-text strong {
+                font-size: 13px;
+            }
+
+            .brand img {
+                width: 39px;
+                height: 39px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadReviews();
-        });
-
-        function saveReviews(reviews) {
-            localStorage.setItem('reviews', JSON.stringify(reviews));
-        }
-
-        function loadReviews() {
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-            reviews.forEach(review => {
-                addReviewToDOM(review.name, review.review, review.rating);
-            });
-        }
-
-        function submitReview(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const review = document.getElementById('review').value;
-            const rating = document.getElementById('rating').value;
-
-            const newReview = { name, review, rating };
-
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-            reviews.push(newReview);
-            saveReviews(reviews);
-
-            addReviewToDOM(name, review, rating);
-
-            document.getElementById('review-form').reset();
-        }
-
-        function addReviewToDOM(name, review, rating) {
-            const reviewItem = document.createElement('div');
-            reviewItem.classList.add('review-item');
-            reviewItem.innerHTML = `<strong>${name}</strong> - Rating: ${rating}/5 <p>${review}</p>`;
-
-            document.getElementById('reviews-list').appendChild(reviewItem);
-        }
-    </script>
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header>
-        <img src="Background Eraser.PNG" alt="Logo">
-        <div class="container">
-            <h1>Benvenuti nel mio sito</h1>
-            <nav>
+        <div class="container header-inner">
+
+            <a href="#home" class="brand">
+                <img src="Background Eraser.PNG" alt="Logo">
+                <div class="brand-text">
+                    <strong>MISTER LUCA</strong>
+                    <span>Football Coach</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Apri menu"
+                    aria-expanded="false"
+                    aria-controls="main-nav">
+                ☰
+            </button>
+
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#chi-sono">Chi sono</a></li>
                     <li><a href="#curriculum">Curriculum</a></li>
-                    <li><a href="#ls-soccer-academy">LS Soccer Academy</a></li>
-                    <li>
-                        <a href="#articoli">Articoli</a>
-                        <ul>
-                            <li><a href="#articolo1">Articolo 1</a></li>
-                            <li><a href="#articolo2">Articolo 2</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#ls-soccer-academy">Academy</a></li>
+                    <li><a href="#articoli">Articoli</a></li>
                     <li><a href="#galleria">Galleria</a></li>
-                    <li><a href="#video-galleria">Video Galleria</a></li>
-                    <li><a href="recensioni.html">Recensioni</a></li>
+                    <li><a href="#video-galleria">Video</a></li>
+                    <li><a href="#recensioni">Recensioni</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
-    <img src="IMG_4595.JPG" alt="Immagine di copertina" style="width: 100%; height: auto;">
-    <div class="container">
-        <main>
-            <section id="chi-sono">
-                <h2>Chi sono</h2>
-                
-             <p>Mi chiamo Luca Sabatucci, nato ad Ascoli Piceno il 18 aprile 1992. Sono un allenatore di calcio giovanile con una passione travolgente per l'insegnamento e lo sviluppo dei giovani talenti. Da anni mi dedico con amore e dedizione a questo straordinario percorso, trasformando ogni allenamento in un'esperienza di crescita e scoperta.
 
-Il calcio è per me molto più di uno sport; è una scuola di vita. Ogni giorno mi impegno a trasmettere ai miei ragazzi non solo le tecniche e le strategie del gioco, ma anche valori fondamentali come la disciplina, il lavoro di squadra, la perseveranza e il rispetto. Credo fermamente che attraverso il calcio possiamo formare non solo atleti migliori, ma anche persone migliori.
+    <!-- HOMEPAGE -->
+    <section class="hero" id="home">
 
-La mia missione è vedere i miei giovani calciatori crescere e sbocciare, sia dentro che fuori dal campo. Ogni loro progresso, ogni sorriso e ogni momento di successo mi riempiono di orgoglio e gratitudine. Il mio approccio all'allenamento è basato sull'equilibrio tra rigore e divertimento, creando un ambiente stimolante e positivo in cui ogni ragazzo possa esprimere al meglio il proprio talento.
+        <img class="hero-image"
+             src="IMG_4595.JPG"
+             alt="Attività calcistica"
+             fetchpriority="high">
 
-Vieni a scoprire come il calcio può diventare una potente fonte di crescita personale. Insieme, possiamo raggiungere traguardi straordinari, coltivando non solo le abilità sportive, ma anche la fiducia, la determinazione e la passione che accompagneranno i giovani atleti per tutta la vita.
+        <div class="hero-overlay"></div>
 
-....</p>
-                
-            
-<img src="WhatsApp%20Image%202026-04-29%20at%2010.25.17.jpeg" alt="Luca Sabatucci - Allenatore di calcio">
+        <div class="container hero-content">
 
-                </div>
-            </section>
-            <section id="curriculum">
-                <h2>Curriculum</h2>
-                <p>Alleno dal 2008 e ho accumulato una vasta esperienza lavorando con diverse squadre e club prestigiosi che mi hanno permesso di avere una formazione completa:</p>
-                <ul>
-                 <li>  Qualifica Uefa B</li>
-                 <li>  Laureato in Economia Aziendale </li>
-                 <li>  Fondatore della metodologia Ls Soccer Academy</li>
-                 <li>  2008-2012 Procalcio Ascoli</li>
-                 <li>  2012-2017 Piazza Immacolata</li>
-                 <li>  2017-2018 Sambenedettese</li>
-                 <li>  2018-2019 Castel di Lama</li>
-                 <li>  2019-2020 Porta Romana</li>
-                 <li>  2021-2022 Sudtirol</li>
-                 <li>  2022-2023 Ascoli Calcio</li>
-                 <li>  2023-2026 Monticelli</li>
-                 <li>  2026-.... Atletico Ascoli</li>
+            <span class="eyebrow">Football Coach · LS Soccer Academy</span>
 
-                </ul>
-                <p>Dal 2022, organizzo un centro estivo di perfezionamento calcistico che ha raggiunto oltre 100 iscritti nel 2024.</p>
-            </section>
-            <section id="ls-soccer-academy">
-                            <h2>LS Soccer Academy</h2>
-            <p>Benvenuti alla LS Soccer Academy, fondata da Luca Sabatucci con l'obiettivo di aiutare giovani appassionati di calcio a raggiungere il loro massimo potenziale. La nostra accademia si distingue per offrire allenamenti ad alta intensità e stimolanti, progettati per favorire la crescita personale e sportiva di ogni ragazzo.</p>
-            <p>Con una profonda passione per l'insegnamento e il gioco del calcio, ho intrapreso questa missione nel 2024 con grande entusiasmo. Il nostro recente centro estivo ha accolto oltre 100 partecipanti, ottenendo risultati eccellenti grazie al metodo unico della LS Soccer Academy e al contributo fondamentale del nostro qualificato staff di allenatori.</p>
-            <p>Il nostro team include quattro laureati in scienze motorie con vasta esperienza nel calcio, oltre ad altri istruttori altamente qualificati con competenze e esperienze significative. Guardando al futuro, mi impegno a seguire personalmente atleti desiderosi di migliorare attraverso sessioni private o in mini gruppi, utilizzando sempre metodologie d'allenamento innovative e coinvolgenti.</p>
-                        <p>Unisciti a noi nella tua ricerca di eccellenza nel calcio. Siamo qui per aiutarti a raggiungere i tuoi obiettivi sportivi con passione e dedizione.</p>
-            <div class="section" id="articoli">
-            <h4>Articoli</h4>
-            <p>Qui puoi trovare gli articoli recenti su di me:</p>
-            <ul>
-                <li><a href="https://www.picenonews24.it/lallenatore-luca-sabatucci-aiuto-i-giovani-giocatori-a-crescere-non-solo-come-atleti-ma-anche-come-persone" target="_blank">L'allenatore Luca Sabatucci: aiuto ai giovani giocatori a crescere non solo come atleti, ma anche come persone</a></li>
-                <li><a href="https://www.picenonews24.it/e-partito-il-football-summer-camp-tanto-calcio-e-divertimento-per-i-piu-piccoli" target="_blank">È partito il Football Summer Camp: tanto calcio e divertimento per i più piccoli</a></li>
-                <li><a href="https://www.picenonews24.it/una-giornata-indimenticabile-al-winter-camp-fatta-di-sport-condivisione-e-divertimento" target="_blank">una-giornata-indimenticabile-al-winter-camp-fatta-di-sport-condivisione-e-divertimento</a></li>
-                <li><a href="https://www.picenonews24.it/next-gen-luca-sabatucci-prima-della-tecnica-e-della-tattica-il-mio-obiettivo-e-trasmettere-valori" target="_blank">luca-sabatucci-prima-della-tecnica-e-della-tattica-il-mio-obiettivo-e-trasmettere-valori</a></li>
-            </ul>
-            </section>
-            <section id="galleria">
-                <h2>Galleria</h2>
-                <div class="gallery">
-                    <a href="ARE YOU READY FOR THE NEXT WEEK.png.PNG" data-lightbox="mygallery"><img src="ARE YOU READY FOR THE NEXT WEEK.png.PNG" alt="Image 1"></a>
-                    <a href="8f3d0112-3fbd-4927-b333-9fac160c95c1.JPG" data-lightbox="mygallery"><img src="8f3d0112-3fbd-4927-b333-9fac160c95c1.JPG" alt="Image 2"></a>
-                    <a href="Untitled design.PNG" data-lightbox="mygallery"><img src="Untitled design.PNG" alt="Image 3"></a>
-                    <a href="123.png.PNG" data-lightbox="mygallery"><img src="123.png.PNG" alt="Image 4"></a>
-                    <a href="35C4CA73-9396-430E-B903-2328EDDF206D.JPG" data-lightbox="mygallery"><img src="35C4CA73-9396-430E-B903-2328EDDF206D.JPG" alt="Image 4"></a>
-                    <a href="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" data-lightbox="mygallery"><img src="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" alt="Image 4"></a>
-                    <a href="481E7BBB-3DB5-4F76-8D54-D92E300CEDF3.JPG" data-lightbox="mygallery"><img src="481E7BBB-3DB5-4F76-8D54-D92E300CEDF3.JPG" alt="Image 4"></a>
-                    <a href="CCC8643D-FF71-4E2A-B6A4-1643AE96A2C3.JPG" data-lightbox="mygallery"><img src="CCC8643D-FF71-4E2A-B6A4-1643AE96A2C3.JPG" alt="Image 4"></a>
-                    <a href="ec55be84-d9cf-42b7-8e92-50d47c87ecec.JPG" data-lightbox="mygallery"><img src="ec55be84-d9cf-42b7-8e92-50d47c87ecec.JPG" alt="Image 4"></a>
-                    <a href="d5c96ee5-8a34-4c44-8811-948c93f88dcb.JPG" data-lightbox="mygallery"><img src="d5c96ee5-8a34-4c44-8811-948c93f88dcb.JPG" alt="Image 4"></a>
-                    
-                </div>
-            </section>
-            <section id="video-galleria">
-                <h2>Video Galleria</h2>
-                <div class="video-gallery">
-                    <video controls>
-                        <source src="copy_E4FD32B6-BC45-4BCF-9C75-0DFB17E59C3F.MOV" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <video controls>
-                        <source src="video/video2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </section>
-            <section id="recensioni">
-                <h2>Recensioni</h2>
-                <div id="reviews-list"></div>
-                <form id="review-form" onsubmit="submitReview(event)">
-                    <h3>Lascia una recensione</h3>
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" required>
-                    <label for="review">Recensione:</label>
-                    <textarea id="review" required></textarea>
-                    <label for="rating">Valutazione (1-5):</label>
-                    <input type="number" id="rating" min="1" max="5" required>
-                    <button type="submit">Invia</button>
-                </form>
-            </section>
-            <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Nome: Luca Sabatucci</p>
-    <p>Puoi contattarmi all'indirizzo email: lssocceraccademy@libero.it</p>
-    <p>Facebook: <a href="https://www.facebook.com/luca.sabatucci.1/" target="_blank">https://www.facebook.com/luca.sabatucci.1/</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/lucasabatucci/" target="_blank">https://www.instagram.com/lucasabatucci/</a></p>
+            <h1>Il calcio è passione.<br>La crescita è il nostro obiettivo.</h1>
+
+            <p>
+                Sono Luca Sabatucci, allenatore di calcio giovanile.
+                Credo nello sport come strumento di formazione,
+                crescita personale e sviluppo dei giovani talenti.
+            </p>
+
+            <a href="#chi-sono" class="button">Scopri la mia storia</a>
+
+            <a href="#ls-soccer-academy" class="button button-outline">
+                LS Soccer Academy
+            </a>
+
+        </div>
     </section>
-        </main>
-    </div>
+
+    <main class="container">
+
+        <!-- CHI SONO -->
+        <section class="section" id="chi-sono">
+
+            <div class="section-heading">
+                <span>La mia storia</span>
+                <h2>Chi sono</h2>
+                <p>Passione, esperienza e formazione attraverso il calcio.</p>
+            </div>
+
+            <div class="profile-grid">
+
+                <div>
+                    <p>
+                        Mi chiamo Luca Sabatucci, nato ad Ascoli Piceno
+                        il 18 aprile 1992. Sono un allenatore di calcio
+                        giovanile con una passione travolgente per
+                        l'insegnamento e lo sviluppo dei giovani talenti.
+                        Da anni mi dedico con amore e dedizione a questo
+                        straordinario percorso, trasformando ogni
+                        allenamento in un'esperienza di crescita e scoperta.
+                    </p>
+
+                    <p>
+                        Il calcio è per me molto più di uno sport;
+                        è una scuola di vita. Ogni giorno mi impegno
+                        a trasmettere ai miei ragazzi non solo le tecniche
+                        e le strategie del gioco, ma anche valori
+                        fondamentali come la disciplina, il lavoro di
+                        squadra, la perseveranza e il rispetto.
+                        Credo fermamente che attraverso il calcio possiamo
+                        formare non solo atleti migliori, ma anche persone
+                        migliori.
+                    </p>
+
+                    <p>
+                        La mia missione è vedere i miei giovani calciatori
+                        crescere e sbocciare, sia dentro che fuori dal campo.
+                        Ogni loro progresso, ogni sorriso e ogni momento
+                        di successo mi riempiono di orgoglio e gratitudine.
+                        Il mio approccio all'allenamento è basato
+                        sull'equilibrio tra rigore e divertimento,
+                        creando un ambiente stimolante e positivo in cui
+                        ogni ragazzo possa esprimere al meglio il proprio talento.
+                    </p>
+
+                    <p>
+                        Vieni a scoprire come il calcio può diventare
+                        una potente fonte di crescita personale.
+                        Insieme, possiamo raggiungere traguardi
+                        straordinari, coltivando non solo le abilità
+                        sportive, ma anche la fiducia, la determinazione
+                        e la passione che accompagneranno i giovani
+                        atleti per tutta la vita.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="profile-photo"
+                         src="WhatsApp%20Image%202026-04-29%20at%2010.25.17.jpeg"
+                         alt="Luca Sabatucci - Allenatore di calcio"
+                         loading="lazy">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CURRICULUM -->
+        <section class="section" id="curriculum">
+
+            <div class="section-heading">
+                <span>Il mio percorso</span>
+                <h2>Curriculum ed esperienze</h2>
+                <p>Esperienze sportive, formazione e crescita professionale.</p>
+            </div>
+
+            <p>
+                Alleno dal 2008 e ho accumulato una vasta esperienza
+                lavorando con diverse squadre e club che mi hanno permesso
+                di costruire una formazione completa.
+            </p>
+
+            <ul class="timeline">
+                <li><strong>Qualifica:</strong> UEFA B</li>
+                <li><strong>Formazione:</strong> Laureato in Economia Aziendale</li>
+                <li><strong>Progetto:</strong> Fondatore della metodologia LS Soccer Academy</li>
+                <li><strong>2008-2012:</strong> Procalcio Ascoli</li>
+                <li><strong>2012-2017:</strong> Piazza Immacolata</li>
+                <li><strong>2017-2018:</strong> Sambenedettese</li>
+                <li><strong>2018-2019:</strong> Castel di Lama</li>
+                <li><strong>2019-2020:</strong> Porta Romana</li>
+                <li><strong>2021-2022:</strong> Sudtirol</li>
+                <li><strong>2022-2023:</strong> Ascoli Calcio</li>
+                <li><strong>2023-2026:</strong> Monticelli</li>
+                <li><strong>2026-:</strong> Atletico Ascoli</li>
+            </ul>
+
+            <p>
+                Dal 2022 organizzo un centro estivo di perfezionamento
+                calcistico che ha raggiunto oltre 100 iscritti nel 2024.
+            </p>
+
+        </section>
+
+        <!-- LS SOCCER ACADEMY -->
+        <section class="section" id="ls-soccer-academy">
+
+            <div class="section-heading">
+                <span>Il mio progetto</span>
+                <h2>LS Soccer Academy</h2>
+                <p>Allenamento, metodologia e sviluppo del talento.</p>
+            </div>
+
+            <p>
+                Benvenuti alla LS Soccer Academy, fondata da Luca Sabatucci
+                con l'obiettivo di aiutare giovani appassionati di calcio
+                a raggiungere il loro massimo potenziale.
+                La nostra accademia si distingue per offrire allenamenti
+                ad alta intensità e stimolanti, progettati per favorire
+                la crescita personale e sportiva di ogni ragazzo.
+            </p>
+
+            <p>
+                Con una profonda passione per l'insegnamento e il gioco
+                del calcio, ho intrapreso questa missione nel 2024
+                con grande entusiasmo. Il nostro recente centro estivo
+                ha accolto oltre 100 partecipanti, ottenendo risultati
+                eccellenti grazie al metodo unico della LS Soccer Academy
+                e al contributo fondamentale del nostro qualificato staff
+                di allenatori.
+            </p>
+
+            <p>
+                Il nostro team include quattro laureati in scienze
+                motorie con vasta esperienza nel calcio, oltre ad altri
+                istruttori altamente qualificati con competenze ed
+                esperienze significative.
+            </p>
+
+            <p>
+                Guardando al futuro, mi impegno a seguire personalmente
+                atleti desiderosi di migliorare attraverso sessioni
+                private o in mini gruppi, utilizzando sempre metodologie
+                d'allenamento innovative e coinvolgenti.
+            </p>
+
+            <div class="academy-banner">
+                <h3>La crescita passa dall'allenamento.</h3>
+                <p>
+                    Unisciti a noi nella tua ricerca di eccellenza
+                    nel calcio. Siamo qui per aiutarti a raggiungere
+                    i tuoi obiettivi sportivi con passione e dedizione.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ARTICOLI -->
+        <section class="section" id="articoli">
+
+            <div class="section-heading">
+                <span>Rassegna stampa</span>
+                <h2>Articoli e pubblicazioni</h2>
+                <p>Qui puoi trovare gli articoli recenti su di me.</p>
+            </div>
+
+            <div class="article-list">
+
+                <a href="https://www.picenonews24.it/lallenatore-luca-sabatucci-aiuto-i-giovani-giocatori-a-crescere-non-solo-come-atleti-ma-anche-come-persone" target="_blank" rel="noopener noreferrer">
+                    L'allenatore Luca Sabatucci: aiuto i giovani giocatori
+                    a crescere non solo come atleti, ma anche come persone
+                </a>
+
+                <a href="https://www.picenonews24.it/e-partito-il-football-summer-camp-tanto-calcio-e-divertimento-per-i-piu-piccoli" target="_blank" rel="noopener noreferrer">
+                    È partito il Football Summer Camp: tanto calcio
+                    e divertimento per i più piccoli
+                </a>
+
+                <a href="https://www.picenonews24.it/una-giornata-indimenticabile-al-winter-camp-fatta-di-sport-condivisione-e-divertimento" target="_blank" rel="noopener noreferrer">
+                    Una giornata indimenticabile al Winter Camp
+                </a>
+
+                <a href="https://www.picenonews24.it/next-gen-luca-sabatucci-prima-della-tecnica-e-della-tattica-il-mio-obiettivo-e-trasmettere-valori" target="_blank" rel="noopener noreferrer">
+                    Next Gen: prima della tecnica e della tattica,
+                    il mio obiettivo è trasmettere valori
+                </a>
+
+            </div>
+        </section>
+
+        <!-- GALLERIA -->
+        <section class="section" id="galleria">
+
+            <div class="section-heading">
+                <span>Momenti di campo</span>
+                <h2>Galleria fotografica</h2>
+                <p>Allenamenti, camp e attività calcistiche.</p>
+            </div>
+
+            <div class="gallery">
+
+                <a href="ARE YOU READY FOR THE NEXT WEEK.png.PNG" target="_blank">
+                    <img src="ARE YOU READY FOR THE NEXT WEEK.png.PNG" alt="Attività LS Soccer Academy" loading="lazy">
+                </a>
+
+                <a href="8f3d0112-3fbd-4927-b333-9fac160c95c1.JPG" target="_blank">
+                    <img src="8f3d0112-3fbd-4927-b333-9fac160c95c1.JPG" alt="Allenamento di calcio" loading="lazy">
+                </a>
+
+                <a href="Untitled design.PNG" target="_blank">
+                    <img src="Untitled design.PNG" alt="Grafica LS Soccer Academy" loading="lazy">
+                </a>
+
+                <a href="123.png.PNG" target="_blank">
+                    <img src="123.png.PNG" alt="Attività calcistica" loading="lazy">
+                </a>
+
+                <a href="35C4CA73-9396-430E-B903-2328EDDF206D.JPG" target="_blank">
+                    <img src="35C4CA73-9396-430E-B903-2328EDDF206D.JPG" alt="Momenti di calcio" loading="lazy">
+                </a>
+
+                <a href="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" target="_blank">
+                    <img src="ISCRIZIONI ULTIMA SETTIMANA.png.PNG" alt="Iscrizioni Summer Camp" loading="lazy">
+                </a>
+
+                <a href="481E7BBB-3DB5-4F76-8D54-D92E300CEDF3.JPG" target="_blank">
+                    <img src="481E7BBB-3DB5-4F76-8D54-D92E300CEDF3.JPG" alt="Allenamento" loading="lazy">
+                </a>
+
+                <a href="CCC8643D-FF71-4E2A-B6A4-1643AE96A2C3.JPG" target="_blank">
+                    <img src="CCC8643D-FF71-4E2A-B6A4-1643AE96A2C3.JPG" alt="Attività sportiva" loading="lazy">
+                </a>
+
+                <a href="ec55be84-d9cf-42b7-8e92-50d47c87ecec.JPG" target="_blank">
+                    <img src="ec55be84-d9cf-42b7-8e92-50d47c87ecec.JPG" alt="LS Soccer Academy" loading="lazy">
+                </a>
+
+                <a href="d5c96ee5-8a34-4c44-8811-948c93f88dcb.JPG" target="_blank">
+                    <img src="d5c96ee5-8a34-4c44-8811-948c93f88dcb.JPG" alt="Attività calcistica" loading="lazy">
+                </a>
+
+            </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section class="section" id="video-galleria">
+
+            <div class="section-heading">
+                <span>Dal campo</span>
+                <h2>Video gallery</h2>
+                <p>Immagini e video delle nostre attività.</p>
+            </div>
+
+            <div class="video-gallery">
+
+                <video controls playsinline preload="metadata">
+                    <source src="copy_E4FD32B6-BC45-4BCF-9C75-0DFB17E59C3F.MOV" type="video/quicktime">
+                    Il tuo browser non supporta questo video.
+                </video>
+
+                <video controls playsinline preload="metadata">
+                    <source src="video/video2.mp4" type="video/mp4">
+                    Il tuo browser non supporta questo video.
+                </video>
+
+            </div>
+        </section>
+
+        <!-- RECENSIONI -->
+        <section class="section" id="recensioni">
+
+            <div class="section-heading">
+                <span>Le vostre opinioni</span>
+                <h2>Recensioni</h2>
+                <p>Condividi la tua esperienza.</p>
+            </div>
+
+            <p class="review-note">
+                Nota: le recensioni inserite in questa versione
+                vengono salvate nel browser del dispositivo utilizzato
+                e non sono pubblicate automaticamente per tutti i visitatori.
+            </p>
+
+            <div id="reviews-list"></div>
+
+            <form id="review-form">
+
+                <h3>Lascia una recensione</h3>
+
+                <label for="name">Nome</label>
+                <input type="text" id="name" maxlength="60" required>
+
+                <label for="review">La tua recensione</label>
+                <textarea id="review" maxlength="1000" required></textarea>
+
+                <label for="rating">Valutazione da 1 a 5</label>
+                <input type="number" id="rating" min="1" max="5" required>
+
+                <button type="submit" class="button">
+                    Invia recensione
+                </button>
+
+            </form>
+        </section>
+
+        <!-- CONTATTI -->
+        <section class="section" id="contatti">
+
+            <div class="section-heading">
+                <span>Rimaniamo in contatto</span>
+                <h2>Contatti</h2>
+                <p>Per informazioni, collaborazioni e attività sportive.</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <strong>Allenatore</strong>
+                    Luca Sabatucci
+                </div>
+
+                <div class="contact-card">
+                    <strong>Email</strong>
+                    <a href="mailto:lssocceraccademy@libero.it">
+                        lssocceraccademy@libero.it
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <strong>Facebook</strong>
+                    <a href="https://www.facebook.com/luca.sabatucci.1/" target="_blank" rel="noopener noreferrer">
+                        Profilo Facebook
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <strong>Instagram</strong>
+                    <a href="https://www.instagram.com/lucasabatucci/" target="_blank" rel="noopener noreferrer">
+                        @lucasabatucci
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Luca Sabatucci | Mister Luca</strong></p>
+        <p>Football Coach · Fondatore LS Soccer Academy</p>
+        <p>© <span id="current-year"></span> Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // MENU SMARTPHONE
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        menuToggle.addEventListener('click', function () {
+            const isOpen = mainNav.classList.toggle('open');
+
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen ? 'Chiudi menu' : 'Apri menu'
+            );
+
+            menuToggle.textContent = isOpen ? '✕' : '☰';
+        });
+
+        // CHIUSURA MENU DOPO LA NAVIGAZIONE
+
+        document.querySelectorAll('#main-nav a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mainNav.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.textContent = '☰';
+            });
+        });
+
+        // ANNO AUTOMATICO
+
+        document.getElementById('current-year').textContent =
+            new Date().getFullYear();
+
+        // RECENSIONI LOCALI
+
+        const reviewForm = document.getElementById('review-form');
+        const reviewsList = document.getElementById('reviews-list');
+
+        function getReviews() {
+            try {
+                return JSON.parse(localStorage.getItem('reviews')) || [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function displayReview(review) {
+            const item = document.createElement('div');
+            item.className = 'review-item';
+
+            const name = document.createElement('strong');
+            name.textContent = review.name;
+
+            const stars = document.createElement('p');
+            stars.textContent = 'Valutazione: ' +
+                '★'.repeat(Number(review.rating)) +
+                '☆'.repeat(5 - Number(review.rating));
+
+            const text = document.createElement('p');
+            text.textContent = review.review;
+
+            item.appendChild(name);
+            item.appendChild(stars);
+            item.appendChild(text);
+
+            reviewsList.appendChild(item);
+        }
+
+        getReviews().forEach(displayReview);
+
+        reviewForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const review = document.getElementById('review').value.trim();
+            const rating = Number(document.getElementById('rating').value);
+
+            if (!name || !review || rating < 1 || rating > 5) {
+                alert('Controlla i dati inseriti.');
+                return;
+            }
+
+            const newReview = {
+                name: name,
+                review: review,
+                rating: rating
+            };
+
+            const reviews = getReviews();
+            reviews.push(newReview);
+
+            try {
+                localStorage.setItem('reviews', JSON.stringify(reviews));
+            } catch (error) {
+                alert('Impossibile salvare la recensione in questo browser.');
+                return;
+            }
+
+            displayReview(newReview);
+            reviewForm.reset();
+
+            alert('Recensione salvata su questo dispositivo!');
+        });
+    </script>
+
 </body>
 </html>
